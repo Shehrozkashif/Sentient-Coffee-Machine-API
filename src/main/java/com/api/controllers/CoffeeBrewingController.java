@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/brew")
+@RequestMapping()
 public class CoffeeBrewingController {
     private final Map<String, String> brewStatus = new HashMap<>();
 
@@ -18,7 +18,7 @@ public class CoffeeBrewingController {
         return "Brewing started for: " + drinkType + " (" + size + ")";
     }
 
-    @GetMapping("/{brewId}/status")
+    @GetMapping()
     public String getBrewStatus(@PathVariable String brewId) {
         return brewStatus.getOrDefault(brewId, "Invalid brew ID");
     }

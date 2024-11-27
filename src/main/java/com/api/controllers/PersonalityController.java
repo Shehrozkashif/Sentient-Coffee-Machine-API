@@ -1,9 +1,9 @@
 package com.api.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
-
 import com.api.Models.Personality;
-
+import com.api.services.PersonalityService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,20 +11,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 public class PersonalityController {
 
-    // Class-level field for Personality object
-    private Personality personality = new Personality();
+    // dependency injection
+    @Autowired
+    private PersonalityService personalityService;
+
     
-
-    @GetMapping("personality")
+    @GetMapping("/personality")
     public Personality getPersonality() {
-        personality.setMood("good");
-        return personality;
+        return personalityService.getPersonality();
     }
 
-    @PutMapping
+    @PutMapping("/updatepersonality")
     public String updatePersonality(@RequestBody Personality newPersonality) {
-        personality = newPersonality;
-       
-        return "Personality updated successfully!";
+        return personalityService.updatePersonality(newPersonality);
     }
+    
 }

@@ -1,5 +1,6 @@
 package com.api.Models;
 
+
 public class BrewRequest {
     private String brewId;
     private String drinkType;

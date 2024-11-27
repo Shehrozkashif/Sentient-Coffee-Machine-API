@@ -21,7 +21,7 @@ public class InteractionController {
 
     @GetMapping("/recommendations")
     public List<String> getRecommendations(@RequestParam String userId) {
-     
+        // For simplicity, returning dummy recommendations
         List<String> recommendations = new ArrayList<>();
         recommendations.add("Espresso");
         recommendations.add("Latte");

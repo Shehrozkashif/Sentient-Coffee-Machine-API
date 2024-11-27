@@ -1,5 +1,6 @@
 package com.api.Models;
 
+
 public class Personality {
 
     private String mood;
@@ -12,19 +13,27 @@ public class Personality {
         return mood;
     }
 
+
     public void setMood(String mood) {
         this.mood = mood;
     }
 
+
     public int getHumorLevel() {
         return humorLevel;
     }
+
+
     public void setHumorLevel(int humorLevel) {
         this.humorLevel = humorLevel;
     }
+
+
     public String getTalkativeness() {
         return talkativeness;
     }
+
+
     public void setTalkativeness(String talkativeness) {
         this.talkativeness = talkativeness;
     }

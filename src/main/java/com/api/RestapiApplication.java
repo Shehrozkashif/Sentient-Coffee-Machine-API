@@ -9,7 +9,7 @@ public class RestapiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RestapiApplication.class, args);
 
-		System.out.println("hello world");
+		System.out.println("Rest API ");
 	}
 
 }

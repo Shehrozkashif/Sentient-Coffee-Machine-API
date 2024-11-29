@@ -16,10 +16,12 @@ public class UserPreferencesController {
         this.userPreferencesService = userPreferencesService;
     }
 
-    @PostMapping
+    
+    @PostMapping("/createuser")
     public String createUser(@RequestBody UserPreferences userPreferences) {
         return userPreferencesService.createUser(userPreferences);
     }
+
 
     @GetMapping("/{userId}/preferences")
     public UserPreferences getPreferences(@PathVariable String userId) {

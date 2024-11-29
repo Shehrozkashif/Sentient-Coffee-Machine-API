@@ -24,7 +24,7 @@ public class InteractionServiceImpl implements InteractionService {
     @Override
     public List<String> getRecommendations(String userId) {
         List<String> recommendations = new ArrayList<>();
-        // Example recommendation logic
+        
         recommendations.add("Espresso");
         recommendations.add("Latte");
         return recommendations;

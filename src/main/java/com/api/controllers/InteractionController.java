@@ -18,7 +18,7 @@ public class InteractionController {
         this.interactionService = interactionService;
     }
 
-    @PostMapping
+    @PostMapping("/record")
     public String recordInteraction(@RequestBody Interaction interaction) {
         return interactionService.recordInteraction(interaction);
     }

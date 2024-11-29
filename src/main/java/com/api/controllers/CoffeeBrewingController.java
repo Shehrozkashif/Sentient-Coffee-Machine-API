@@ -15,7 +15,7 @@ public class CoffeeBrewingController {
         this.coffeeBrewingService = coffeeBrewingService;
     }
 
-    @PostMapping
+    @PostMapping("/startbrewingcycle")
     public String startBrewing(@RequestParam String brewId, @RequestParam String drinkType, @RequestParam String size) {
         return coffeeBrewingService.startBrewing(brewId, drinkType, size);
     }

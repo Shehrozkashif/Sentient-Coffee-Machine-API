@@ -1,11 +1,10 @@
 package com.api.services;
 
 import org.springframework.stereotype.Service;
-
 import com.api.Models.Personality;
 
 @Service
-public class PersonalityServiceImpl implements PersonalityService  {
+public class PersonalityServiceImpl implements PersonalityService {
 
     private Personality personality = new Personality();
 
@@ -14,10 +13,9 @@ public class PersonalityServiceImpl implements PersonalityService  {
         return personality;
     }
 
-    
     @Override
     public String updatePersonality(Personality newPersonality) {
-        personality = newPersonality;
+        this.personality = newPersonality;
         return "Personality updated successfully!";
     }
 }

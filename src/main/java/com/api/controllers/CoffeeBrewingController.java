@@ -1,25 +1,27 @@
 package com.api.controllers;
 
-
-import org.springframework.web.bind.annotation.RestController;
+import com.api.services.CoffeeBrewingService;
+// import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @RestController
-@RequestMapping()
+@RequestMapping("/coffee-brewing")
 public class CoffeeBrewingController {
-    private final Map<String, String> brewStatus = new HashMap<>();
+
+    private final CoffeeBrewingService coffeeBrewingService;
+
+    // @Autowired
+    public CoffeeBrewingController(CoffeeBrewingService coffeeBrewingService) {
+        this.coffeeBrewingService = coffeeBrewingService;
+    }
 
     @PostMapping
     public String startBrewing(@RequestParam String brewId, @RequestParam String drinkType, @RequestParam String size) {
-        brewStatus.put(brewId, "brewing");
-        return "Brewing started for: " + drinkType + " (" + size + ")";
+        return coffeeBrewingService.startBrewing(brewId, drinkType, size);
     }
 
-    @GetMapping()
+    @GetMapping("/{brewId}")
     public String getBrewStatus(@PathVariable String brewId) {
-        return brewStatus.getOrDefault(brewId, "Invalid brew ID");
+        return coffeeBrewingService.getBrewStatus(brewId);
     }
 }

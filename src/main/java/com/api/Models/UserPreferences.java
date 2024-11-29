@@ -1,7 +1,9 @@
 package com.api.Models;
 
+
 public class UserPreferences {
     private String userId;
+    private String name;
     private String preferredDrink;
     private String strength;
     private String sugar; 
@@ -52,5 +54,11 @@ public class UserPreferences {
         this.milk = milk;
     }
 
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
   
 }

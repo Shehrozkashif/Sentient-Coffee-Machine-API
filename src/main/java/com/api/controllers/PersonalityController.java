@@ -15,7 +15,6 @@ public class PersonalityController {
     @Autowired
     private PersonalityService personalityService;
 
-    
     @GetMapping("/personality")
     public Personality getPersonality() {
         return personalityService.getPersonality();
@@ -25,5 +24,4 @@ public class PersonalityController {
     public String updatePersonality(@RequestBody Personality newPersonality) {
         return personalityService.updatePersonality(newPersonality);
     }
-    
 }

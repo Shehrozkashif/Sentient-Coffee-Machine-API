@@ -10,7 +10,7 @@ http://localhost:8080
 ## 1. Personality Management
 
 ### GET /personality
-**Description**: Retrieve the current personality profile of the machine.
+**Description**: Retrieve the current persnality profile of the machine.
 
 **Response**:
 - **Status Code**: 200 OK
